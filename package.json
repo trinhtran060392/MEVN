@@ -5,8 +5,9 @@
   "author": "trinh tran <trinhtv@gemvietnam.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run build && node ./server/www",
+    "watch": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "nodemon ./server/www",
+    "start": "npm run build && nodemon ./server/www",
     "build": "node build/build.js"
   },
   "dependencies": {

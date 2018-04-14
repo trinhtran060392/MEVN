@@ -2,19 +2,14 @@
   <b-row>
     <b-col cols="12">
       <h2>
-        Book List
+        Books List
         <b-link href="#/add-book">(Add Book)</b-link>
       </h2>
       <b-table striped hover :items="books" :fields="fields">
-        <template slot="actions" scope="row">
+        <template slot="actions">
           <b-btn size="sm" @click.stop="details(row.item)">Details</b-btn>
         </template>
       </b-table>
-      <ul v-if="errors && errors.length">
-        <li v-for="error of errors">
-          {{error.message}}
-        </li>
-      </ul>
     </b-col>
   </b-row>
 </template>
@@ -32,8 +27,7 @@ export default {
         title: { label: 'Book Title', sortable: true },
         actions: { label: 'Action', 'class': 'text-center' }
       },
-      books: [],
-      errors: []
+      books: []
     }
   },
   created () {
